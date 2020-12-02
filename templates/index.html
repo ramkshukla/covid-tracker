@@ -1,0 +1,65 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Covid Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+{% block content %}
+
+<section>
+
+    <h1>Real Time Covid-19 Tracker</h1>
+
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Last_update</th>
+                    <th>Cases</th>
+                    <th>Deaths</th>
+                    <th>Recovered</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+
+            {% for i in data %}
+                <tr>
+                        <td>     {{ i.country }}     </td>
+                        <td>     {{ i.last_update }} </td>
+                        <td>     {{ i.cases }}       </td>
+                        <td>     {{ i.deaths }}       </td>
+                        <td>     {{ i.recovered }}    </td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+
+<div class="made-with-love">
+
+    Made with
+    <i>	&#9829 </i> by
+    <a target="_blank" href="https://covid19-api.org/api/status">using this site</a>
+
+</div>
+{% endblock %}
+</body>
+</html>

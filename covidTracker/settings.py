@@ -76,14 +76,15 @@ WSGI_APPLICATION = 'covidTracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dc512aeqlcnbjk',
+        'HOST': 'ec2-52-206-44-27.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'ippfiejiuifcad',
+        'PASSWORD': '750565a09d0aa84e6a589d915506594707f2508ec89160f92393322ad10b735a'
     },
-    'OPTIONS': {
-        'timeout' : 30
-    }
-}
 
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
